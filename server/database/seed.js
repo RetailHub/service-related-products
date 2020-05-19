@@ -1,3 +1,5 @@
+console.log('NOW SEEDING');
+
 const faker = require('faker');
 const models = require('../models');
 
@@ -46,6 +48,7 @@ async function seedDatabase() {
       await models.productCategories.addNew([j, categoryId]);
     });
   }
+  console.log('DONE SEEDING');
 }
 
 seedDatabase();
