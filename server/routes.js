@@ -25,13 +25,10 @@ router.post('/addProduct', (req, res) => {
   numReviews = Number(numReviews);
   avgRating = Number(avgRating);
   const arr = [productId, name, price, prime, imageUrl, numReviews, avgRating];
-  console.log('Request is: ', arr);
   models.products.addNew(arr, (err, results) => {
-    console.log('Reaches here', err, results);
     if (err) {
       res.sendStatus(400);
     } else {
-      console.log(results);
       res.send(results);
     }
   });
