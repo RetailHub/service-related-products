@@ -39,6 +39,6 @@ CREATE TABLE `feedback` (
   `id_productCategories` INT(11)
 );
 
-ALTER TABLE `productCategories` ADD FOREIGN KEY (id_products) REFERENCES `products` (`id`);
-ALTER TABLE `productCategories` ADD FOREIGN KEY (id_categories) REFERENCES `categories` (`id`);
-ALTER TABLE `feedback` ADD FOREIGN KEY (id_productCategories) REFERENCES `productCategories` (`id`);
+-- ALTER TABLE `productCategories` ADD FOREIGN KEY (id_products) REFERENCES `products` (`id`);
+-- ALTER TABLE `productCategories` ADD FOREIGN KEY (id_categories) REFERENCES `categories` (`id`);
+-- ALTER TABLE `feedback` ADD FOREIGN KEY (id_productCategories) REFERENCES `productCategories` (`id`);

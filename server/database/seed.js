@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const faker = require('faker');
 const models = require('../models');
 
