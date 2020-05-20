@@ -55,6 +55,14 @@ module.exports = {
       callback(err, results);
     });
   },
+
+  delete: (params, callback) => {
+    const { value, field } = params;
+    const sql = `DELETE FROM products WHERE ${field}=${value}`;
+    db.query(sql, (err, results) => {
+      callback(err, results);
+    });
+  },
 };
 
 /*

@@ -88,5 +88,15 @@ router.patch('/updateProduct', (req, res) => {
   });
 });
 
+router.delete('/deleteProduct', (req, res) => {
+  models.delete(req.body, (err, results) => {
+    if (err) {
+      console.error('Error line 94: ', err);
+    } else {
+      res.send(results);
+    }
+  });
+});
+
 
 module.exports = router;
