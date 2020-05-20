@@ -9,6 +9,7 @@ module.exports = {
       });
     },
     addNew(params, callback = () => {}) {
+      console.log(params);
       const sql = 'INSERT INTO products (productId, name, price, prime, imageUrl, numReviews, avgRating) VALUES (?, ?, ?, ?, ?, ?, ?)';
       db.query(sql, params, (err, results) => {
         callback(err, results);
@@ -41,3 +42,15 @@ module.exports = {
     },
   },
 };
+
+/*
+[
+  100,
+  'Rustic Steel Chicken',
+  '561.00',
+  1,
+  'https://d1ivqy59bo7rzu.cloudfront.net/orangina.jpg',
+  43610,
+  4.5
+]
+*/

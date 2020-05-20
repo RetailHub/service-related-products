@@ -2,10 +2,11 @@ const faker = require('faker');
 const models = require('../models');
 
 async function seedDatabase() {
+  console.log('Seeding initiated');
   // Generate categories
   const cats = new Set();
   while (cats.size < 10) {
-    const name = faker.random.word();
+    const name = faker.random.word().toLowerCase();
     cats.add(name);
   }
   await cats.forEach(async (cat) => {
@@ -46,6 +47,7 @@ async function seedDatabase() {
       await models.productCategories.addNew([j, categoryId]);
     });
   }
+  console.log('Seeding completed');
 }
 
 seedDatabase();
