@@ -9,7 +9,6 @@ module.exports = {
       });
     },
     addNew(params, callback = () => {}) {
-      console.log(params);
       const sql = 'INSERT INTO products (productId, name, price, prime, imageUrl, numReviews, avgRating) VALUES (?, ?, ?, ?, ?, ?, ?)';
       db.query(sql, params, (err, results) => {
         callback(err, results);
@@ -21,6 +20,12 @@ module.exports = {
     getAll(callback) {
       const sql = 'SELECT id FROM categories ORDER BY id ASC';
       db.query(sql, (err, results) => {
+        callback(err, results);
+      });
+    },
+    getCategory(category, callback) {
+      const sql = `SELECT * FROM categories WHERE name="${category}"`;
+      db.query(sql, category, (err, results) => {
         callback(err, results);
       });
     },
@@ -40,6 +45,15 @@ module.exports = {
         callback(err, results);
       });
     },
+  },
+
+  update: (params, callback) => {
+    // console.log('dB side: ', params);
+    const { newValue, productId, fieldName } = params;
+    const sql = `UPDATE products SET ${fieldName} = ${newValue} WHERE productId=${productId}`;
+    db.query(sql, (err, results) => {
+      callback(err, results);
+    });
   },
 };
 
