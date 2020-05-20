@@ -11,8 +11,7 @@
     "build": "webpack --config webpack.config.js --mode production",
     "build-dev": "webpack --config webpack.config.js --watch --mode development",
     "seed": "node server/database/seed.js",
-    "server-dev": "nodemon server/",
-    "start": "node server/",
+    "start": "nodemon server/",
     "test": "jest --verbose --detectOpenHandles",
     "test-coverage": "jest --verbose --coverage --colors --detectOpenHandles",
     "test-watch": "jest --watch"

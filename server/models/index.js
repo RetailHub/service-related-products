@@ -23,6 +23,12 @@ module.exports = {
         callback(err, results);
       });
     },
+    getCategory(category, callback) {
+      const sql = `SELECT * FROM categories WHERE name="${category}"`;
+      db.query(sql, category, (err, results) => {
+        callback(err, results);
+      });
+    },
     addNew(category, callback = () => {}) {
       const sql = 'INSERT INTO categories (name) VALUES (?)';
 
@@ -40,4 +46,25 @@ module.exports = {
       });
     },
   },
+
+  update: (params, callback) => {
+    // console.log('dB side: ', params);
+    const { newValue, productId, fieldName } = params;
+    const sql = `UPDATE products SET ${fieldName} = ${newValue} WHERE productId=${productId}`;
+    db.query(sql, (err, results) => {
+      callback(err, results);
+    });
+  },
 };
+
+/*
+[
+  100,
+  'Rustic Steel Chicken',
+  '561.00',
+  1,
+  'https://d1ivqy59bo7rzu.cloudfront.net/orangina.jpg',
+  43610,
+  4.5
+]
+*/
