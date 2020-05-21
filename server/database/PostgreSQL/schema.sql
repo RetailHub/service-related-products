@@ -12,12 +12,6 @@ CREATE TABLE products (
   imageUrl VARCHAR(255) NOT NULL,
   reviews INT NOT NULL,
   rating FLOAT(2) NOT NULL,
-  category VARCHAR(40)
-);
-
-DROP TABLE IF EXISTS categories;
-
-CREATE TABLE categories (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(30) UNIQUE
+  category VARCHAR(40),
+  subcategory VARCHAR(40)
 );
