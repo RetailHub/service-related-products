@@ -3,7 +3,8 @@ const db = require('../database');
 module.exports = {
   products: {
     getRelated(productId, callback) {
-      const sql = 'SELECT DISTINCT p.* FROM products AS p LEFT OUTER JOIN productCategories AS pcj ON pcj.id_products = p.id WHERE pcj.id_categories IN (SELECT pcj.id_categories FROM productCategories AS pcj INNER JOIN products AS p ON p.id = pcj.id_products WHERE p.productId = ?) AND p.productId != ? LIMIT 50';
+      // const sql = 'SELECT DISTINCT p.* FROM products AS p LEFT OUTER JOIN productCategories AS pcj ON pcj.id_products = p.id WHERE pcj.id_categories IN (SELECT pcj.id_categories FROM productCategories AS pcj INNER JOIN products AS p ON p.id = pcj.id_products WHERE p.productId = ?) AND p.productId != ? LIMIT 50';
+      const sql = 'SELECT * FROM products LIMIT 50';
       db.query(sql, [productId, productId], (err, results) => {
         callback(err, results);
       });
@@ -64,15 +65,3 @@ module.exports = {
     });
   },
 };
-
-/*
-[
-  100,
-  'Rustic Steel Chicken',
-  '561.00',
-  1,
-  'https://d1ivqy59bo7rzu.cloudfront.net/orangina.jpg',
-  43610,
-  4.5
-]
-*/

@@ -10,6 +10,7 @@ router.get('/related_products/:id', (req, res) => {
     if (err) {
       res.status(500).send('Something went wrong!');
     } else {
+      console.log('RESULTS IS: ', results);
       res.status(200).send(results);
     }
   });
@@ -36,7 +37,6 @@ router.post('/addProduct', (req, res) => {
       models.categories.addNew(category, (err, results) => {
         if (err) {
           if (err.code === 'ER_DUP_ENTRY') {
-            // get category ID
             models.categories.getCategory(category, (err, results) => {
               if (err) {
                 console.error('ERROR: ', err);
@@ -48,7 +48,7 @@ router.post('/addProduct', (req, res) => {
                 models.productCategories.addNew([productId, categoryId], (err, results) => {
                   if (err) {
                     console.error('Error!', err);
-                    // res.end();
+                    res.end();
                   } else {
                     const { insertId } = results;
                     res.send(`Insert Id is ${insertId}, productId is ${id_products}, and categoryId is ${id_categories}`);
