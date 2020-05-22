@@ -12,3 +12,11 @@ client.connect((err) => {
     console.log('Successfully connected to Cassandra');
   }
 });
+
+const createKeyspace = (name) => {
+  // CREATE THE KEYSPACE
+  client.execute(`CREATE KEYSPACE IF NOT EXISTS ${name} WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1}`);
+};
+
+createKeyspace('related');
+
