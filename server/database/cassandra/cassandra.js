@@ -13,10 +13,22 @@ client.connect((err) => {
   }
 });
 
-const createKeyspace = (name) => {
-  // CREATE THE KEYSPACE
-  client.execute(`CREATE KEYSPACE IF NOT EXISTS ${name} WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1}`);
-};
+// CREATE KEYSPACE
+client.execute("CREATE KEYSPACE IF NOT EXISTS related WITH REPLICATION = {'class':'SimpleStrategy', 'replication_factor': 1}");
 
-createKeyspace('related');
-
+// DROP EXISTING TABLE
+client.execute('DROP TABLE IF EXISTS related.products');
+// CREATE TABLE
+client.execute(`CREATE TABLE IF NOT EXISTS related.products (
+    id uuid,
+    productId INT,
+    name text,
+    price DECIMAL,
+    prime BOOLEAN,
+    imageUrl text,
+    reviews INT,
+    rating float,
+    category text,
+    subcategory text,
+    PRIMARY KEY (id, productId, name, price, prime, imageUrl, category)
+    )`);
