@@ -6,5 +6,8 @@
  */
 
 module.exports = {
-  extends: ['airbnb']
+  extends: ['airbnb'],
+  rules: {
+    'max-len': 0,
+  }
 };

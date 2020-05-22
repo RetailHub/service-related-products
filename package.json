@@ -10,6 +10,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js --mode production",
     "build-dev": "webpack --config webpack.config.js --watch --mode development",
+    "generate": "node server/database/PostgreSQL/data-generator.js",
     "seed": "node server/database/seed.js",
     "start": "nodemon server/",
     "test": "jest --verbose --detectOpenHandles",
@@ -19,6 +20,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "babel-preset-airbnb": "^5.0.0",
+    "cassandra-driver": "^4.5.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
