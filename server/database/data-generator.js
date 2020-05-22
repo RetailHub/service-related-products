@@ -3,7 +3,7 @@ const fs = require('fs');
 const dataStore = require('./urlSet.js');
 
 const writeUsers = fs.createWriteStream('data.csv');
-writeUsers.write('id|name|price|prime|imageUrl|reviews|rating|category|subcategory\n', 'utf8');
+writeUsers.write('productId|name|price|prime|imageUrl|reviews|rating|category\n', 'utf8');
 
 function writeTenMillionUsers(writer, encoding, callback) {
   let i = 10;
