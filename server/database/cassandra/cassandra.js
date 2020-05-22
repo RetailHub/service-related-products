@@ -29,6 +29,5 @@ client.execute(`CREATE TABLE IF NOT EXISTS related.products (
     reviews INT,
     rating float,
     category text,
-    subcategory text,
-    PRIMARY KEY (id, productId, name, price, prime, imageUrl, category)
+    PRIMARY KEY (productId, name, price, prime, imageUrl, category)
     )`);
