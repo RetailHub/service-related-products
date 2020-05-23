@@ -1,11 +1,11 @@
-productId|name|price|prime|imageUrl|reviews|rating|category
-1|Licensed Plastic Computer|272.00|0|delicate-fashion-headphones.jpg|1020|1|outdoors
-2|Rustic Granite Fish|84.00|1|delicate-and-smooth-porcelain.jpg|2730|1|sports
-3|Handmade Concrete Fish|518.00|0|close-up-of-colour-pencils.jpg|7884|1|outdoors
-4|Handmade Steel Cheese|727.00|1|fingertip-gyroscope.jpg|1546|2|sports
-5|Rustic Granite Bike|266.00|1|fingertip-gyroscope.jpg|7893|3|home
-6|Unbranded Rubber Pants|418.00|1|premium-saltines.jpg|8773|4|clothing
-7|Handcrafted Cotton Fish|715.00|1|round-cute-little-alarm-clock.jp|2580|5|pets
-8|Practical Rubber Computer|594.00|0|fashionable-and-exquisite-ring.jpg|6924|3|pets
-9|Fantastic Concrete Gloves|460.00|1|twix.jpg|2202|3|home
-10|Licensed Rubber Hat|92.00|1|steam-engine.jpg|1218|4|music
+productId|name|price|prime|imageUrl|reviews|rating|category|subcategory
+1|Fantastic Cotton Tuna|187.00|false|delicate-fashion-headphones.jpg|7881|1|education|
+2|Gorgeous Soft Sausages|947.00|true|kitchen-knife-feature.jpg|8571|1|sports|
+3|Handmade Soft Towels|363.00|true|casual-shoes.jpg|6568|3|outdoors|
+4|Small Steel Salad|315.00|false|nikon-camera-lens-cap.jpg|7419|0|sports|
+5|Practical Cotton Hat|785.00|true|lays.jpg|9857|1|beauty|
+6|Tasty Frozen Bike|299.00|false|sim-card-chip-for-mobile-phone.jpg|7252|2|outdoors|
+7|Awesome Soft Table|861.00|true|exquisite-diamond-ring.jpg|4635|3|pets|
+8|Gorgeous Metal Hat|233.00|false|unique-lighting.jpg|4094|3|education|
+9|Fantastic Granite Tuna|381.00|true|unique-sunglasses.jpg|3177|1|home|
+10|Fantastic Frozen Sausages|445.00|false|cool-and-temperamental-sunglasses.jpg|5103|3|tools|

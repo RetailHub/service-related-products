@@ -3,7 +3,7 @@ const fs = require('fs');
 const dataStore = require('./urlSet.js');
 
 const writeUsers = fs.createWriteStream('data.csv');
-writeUsers.write('productId|name|price|prime|imageUrl|reviews|rating|category\n', 'utf8');
+writeUsers.write('productId|name|price|prime|imageUrl|reviews|rating|category|subcategory\n', 'utf8');
 
 function writeTenMillionUsers(writer, encoding, callback) {
   let i = 10;
@@ -15,12 +15,12 @@ function writeTenMillionUsers(writer, encoding, callback) {
       id += 1;
       const name = faker.commerce.productName();
       const price = faker.commerce.price();
-      const prime = Math.floor(Math.random() * 2);
+      const prime = [true, false][Math.floor(Math.random() * 2)];
       const imageUrl = dataStore.images[Math.floor(Math.random() * dataStore.images.length)];
       const reviews = Math.floor(Math.random() * 10000);
       const rating = Math.floor(Math.random() * 6);
       const category = dataStore.categories[Math.floor(Math.random() * dataStore.categories.length)];
-      const data = `${id}|${name}|${price}|${prime}|${imageUrl}|${reviews}|${rating}|${category}\n`;
+      const data = `${id}|${name}|${price}|${prime}|${imageUrl}|${reviews}|${rating}|${category}|\n`;
       if (i === 0) {
         writer.write(data, encoding, callback);
       } else {
