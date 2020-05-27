@@ -16,17 +16,20 @@
     "test": "jest --verbose --detectOpenHandles",
     "test-coverage": "jest --verbose --coverage --colors --detectOpenHandles",
     "test-watch": "jest --watch",
-    "c2c": "cqlsh -k related -e \"COPY related.products (productid, name, price, prime, imageUrl, reviews, rating, category, subcategory) FROM 'server/database/data.csv' WITH DELIMITER = '|' AND HEADER = TRUE;\""
+    "c2c": "cqlsh -k related -e \"COPY related.products (productid, name, price, prime, imageUrl, reviews, rating, category, subcategory) FROM 'server/database/data.csv' WITH DELIMITER = '|' AND HEADER = TRUE;\"",
+    "c2p": "node server/database/postgreSQL/CSV_to_postgres.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "babel-preset-airbnb": "^5.0.0",
+    "bluebird": "^3.7.2",
     "cassandra-driver": "^4.5.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "mysql": "^2.18.1",
     "pg": "^8.2.1",
+    "pg-promise": "^10.5.6",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

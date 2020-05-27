@@ -28,4 +28,4 @@ public/
 # Environment Variables
 .env*
 
-server/database/data.csv
+data.csv
