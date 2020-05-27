@@ -8,7 +8,6 @@ router.get('/related_products/:id', (req, res) => {
     if (err) {
       res.status(500).send('Something went wrong!');
     } else {
-      console.log('RESULTS IS: ', results);
       res.status(200).send(results);
     }
   });
@@ -19,7 +18,6 @@ router.post('/addProduct', (req, res) => {
     if (err) {
       res.status(500).send('Something went wrong!');
     } else {
-      console.log('RESULTS IS: ', results);
       res.status(200).send(results);
     }
   });
