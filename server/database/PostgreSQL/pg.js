@@ -33,7 +33,7 @@ module.exports = {
           callback(null, data);
         })
         .catch((err) => {
-          console.log('Error here: ', err);
+          console.error(err);
           callback(err);
         });
     },
