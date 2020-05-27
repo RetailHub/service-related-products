@@ -13,6 +13,7 @@
     "generate": "node server/database/PostgreSQL/data-generator.js",
     "seed": "node server/database/seed.js",
     "start": "nodemon server/",
+    "stress": "artillery run server/stress.yml",
     "stress-get": "artillery run server/stress_get.yml",
     "stress-post": "artillery run server/stress_post.yml",
     "test": "jest --verbose --detectOpenHandles",
