@@ -8,19 +8,16 @@ config:
       arrivalRate: 1
       maxVusers: 1
       name: "Warm up"
-      pause: 10
     - duration: 20
       arrivalRate: 1
       rampTo: 10
       maxVusers: 10
       name: "x10"
-      pause: 10
     - duration: 30
       arrivalRate: 10
       rampTo: 100
       maxVusers: 100
       name: "x100"
-      pause: 10
     - duration: 60
       arrivalRate: 100
       rampTo: 1000
@@ -30,15 +27,7 @@ config:
     headers:
       x-my-service-auth: '987401838271002188298567'
 scenarios:
-  - name: "GET related items"
-    weight: 10
-    flow:
-      - function: "generateId"
-      - get:
-          url: "/?={id}"
-      - log: "GET request with ID: {{id}}"
-  - name: "Post items"
-    weight: 1
+  - name: "POST items"
     flow:
     - function: "generatePost"
     - post:
