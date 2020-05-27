@@ -10,5 +10,8 @@ module.exports = {
   rules: {
     'max-len': 0,
     'no-console': 0,
+    'no-template-curly-in-string': 0,
+    'camelcase': 0,
+    'radix': 0,
   }
 };
