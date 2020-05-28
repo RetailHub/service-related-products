@@ -8,19 +8,19 @@ config:
       arrivalRate: 1
       maxVusers: 1
       name: "Warm up"
-      pause: 10
+      pause: 3
     - duration: 20
       arrivalRate: 1
       rampTo: 10
       maxVusers: 10
       name: "x10"
-      pause: 10
+      pause: 3
     - duration: 30
       arrivalRate: 10
       rampTo: 100
       maxVusers: 100
       name: "x100"
-      pause: 10
+      pause: 3
     - duration: 60
       arrivalRate: 100
       rampTo: 1000
@@ -36,7 +36,7 @@ scenarios:
       - function: "generateId"
       - get:
           url: "/?={id}"
-      - log: "GET request with ID: {{id}}"
+      # - log: "GET request with ID: {{id}}"
   - name: "Post items"
     weight: 1
     flow:
@@ -52,5 +52,5 @@ scenarios:
           numReviews: "{{ numReviews }}"
           avgRating: "{{ avgRating }}"
           category: "{{ category }}"
-    - log: "POST request with ID: {{productId}}"
+    # - log: "POST request with ID: {{productId}}"
 
