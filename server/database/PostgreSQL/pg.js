@@ -6,12 +6,14 @@ const initOptions = {
 
 const pgp = require('pg-promise')(initOptions);
 
+const config = require('./psqlconfig.js');
+
 const connection = {
   host: 'localhost',
   port: 5432,
   database: 'related',
   user: 'sajjanrajvaidya',
-  password: '',
+  password: config.entry,
 };
 
 const db = pgp(connection);
