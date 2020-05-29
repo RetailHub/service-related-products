@@ -4,7 +4,6 @@ const pg = require('./database/PostgreSQL/pg.js');
 const router = express.Router();
 
 router.get('/related_products/:id', (req, res) => {
-  console.log(req.params.id);
   pg.products.getRelated(req.params.id, (err, results) => {
     if (err) {
       res.status(500).send('Something went wrong!');
@@ -17,7 +16,7 @@ router.get('/related_products/:id', (req, res) => {
 router.post('/addProduct', (req, res) => {
   pg.products.addNew(req.body, (err, results) => {
     if (err) {
-      res.status(500).send('Something went wrong!');
+      res.status(500).send('Something went wrong!', err);
     } else {
       res.status(200).send(results);
     }
