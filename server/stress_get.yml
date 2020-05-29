@@ -23,9 +23,9 @@ config:
       rampTo: 1000
       maxVusers: 1000
       name: "Sustained max load"
-  defaults:
-    headers:
-      x-my-service-auth: '987401838271002188298567'
+  # defaults:
+  #   headers:
+  #     x-my-service-auth: '987401838271002188298567'
 scenarios:
   - name: "GET related items"
     flow:
