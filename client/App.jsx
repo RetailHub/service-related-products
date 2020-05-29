@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
@@ -87,7 +89,7 @@ class App extends React.Component {
         });
       })
       .catch((err) => console.error('Feedback not saved.'));
-    }
+  }
 
   previous() {
     const { firstItemInView, numItemsToDisplay, relatedProducts } = this.state;
