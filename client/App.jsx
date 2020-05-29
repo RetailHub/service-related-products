@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
@@ -9,8 +11,6 @@ import ProductList from './components/ProductList';
 import FeedbackToggle from './components/FeedbackToggle';
 import FeedbackModal from './components/FeedbackModal';
 
-
-// console.log('Webpack is watching for changes!');
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -89,7 +89,7 @@ class App extends React.Component {
         });
       })
       .catch((err) => console.error('Feedback not saved.'));
-    }
+  }
 
   previous() {
     const { firstItemInView, numItemsToDisplay, relatedProducts } = this.state;

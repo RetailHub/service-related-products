@@ -1,10 +1,13 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import propTypes from 'prop-types';
 
 import styles from '../css/product-list.css';
 import ProductListItem from './ProductListItem';
 
-const ProductList = ({ products, showLinks, itemGap, openModal }) => {
+const ProductList = ({
+  products, showLinks, itemGap, openModal,
+}) => {
   const prods = products.map((product) => (
     <ProductListItem
       key={product.productId}
@@ -14,7 +17,7 @@ const ProductList = ({ products, showLinks, itemGap, openModal }) => {
     />
   ));
   return (
-    <div className={styles['related-product-list']} style={{ gap: itemGap +'px' }}>
+    <div className={styles['related-product-list']} style={{ gap: `${itemGap}px` }}>
       { prods }
     </div>
   );

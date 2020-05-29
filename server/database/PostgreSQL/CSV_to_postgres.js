@@ -3,11 +3,13 @@ const path = require('path');
 
 const { Pool } = require('pg');
 
+const config = require('./psqlconfig.js');
+
 const pool = new Pool({
   user: 'sajjanrajvaidya',
   host: 'localhost',
   database: 'related',
-  password: '',
+  password: config.entry,
   port: 5432,
 });
 
