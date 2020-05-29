@@ -1,5 +1,5 @@
 const express = require('express');
-const pg = require('./database/postgreSQL/pg.js');
+const pg = require('./database/PostgreSQL/pg.js');
 
 const router = express.Router();
 
