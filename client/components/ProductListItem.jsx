@@ -15,7 +15,6 @@ const ProductListItem = ({ product, showLinks, openModal }) => {
   } = product;
   const avgrating = product.rating;
   const numreviews = product.reviews;
-  console.log('product is: ', product, avgrating, numreviews, price);
   const fullUrl = `https://sdc-related-products.s3.us-east-2.amazonaws.com/images/${imageurl}`;
   return (
     <div className={style['single-product']}>
