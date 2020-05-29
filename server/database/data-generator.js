@@ -6,7 +6,7 @@ const writeUsers = fs.createWriteStream('data.csv');
 writeUsers.write('productId|name|price|prime|imageUrl|reviews|rating|category|subcategory\n', 'utf8');
 
 function writeTenMillionUsers(writer, encoding, callback) {
-  let i = 100;
+  let i = 10000000;
   let id = 0;
   function write() {
     let ok = true;
