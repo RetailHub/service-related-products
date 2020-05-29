@@ -11,6 +11,8 @@ import ProductList from './components/ProductList';
 import FeedbackToggle from './components/FeedbackToggle';
 import FeedbackModal from './components/FeedbackModal';
 
+const id = window.location.search.substring(2);
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -37,8 +39,6 @@ class App extends React.Component {
 
   componentDidMount() {
     // eslint-disable-next-line no-undef
-    const params = new URLSearchParams(document.location.search.substring(1));
-    const id = params.get('id');
     this.getRelatedProducts(id);
     window.addEventListener('resize', this.updateNumItemsToDisplay);
   }

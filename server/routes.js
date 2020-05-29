@@ -4,6 +4,7 @@ const pg = require('./database/postgreSQL/pg.js');
 const router = express.Router();
 
 router.get('/related_products/:id', (req, res) => {
+  console.log(req.params.id);
   pg.products.getRelated(req.params.id, (err, results) => {
     if (err) {
       res.status(500).send('Something went wrong!');
