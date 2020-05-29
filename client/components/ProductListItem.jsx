@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-nested-ternary */
 import React from 'react';
 import propTypes from 'prop-types';
@@ -7,7 +8,13 @@ import FeedbackLink from './FeedbackLink';
 import Prime from './Prime';
 
 const ProductListItem = ({ product, showLinks, openModal }) => {
-  const { productId, name, imageUrl, avgRating, numReviews, price, prime } = product;
+  const {
+    productid, name, imageurl, price, prime,
+  } = product;
+  const avgrating = product.rating;
+  const numreviews = product.reviews;
+  console.log('product is: ', product, avgrating, numreviews, price);
+  const fullUrl = `https://sdc-related-products.s3.us-east-2.amazonaws.com/images/${imageurl}`;
   return (
     <div className={style['single-product']}>
       <FeedbackLink
@@ -16,31 +23,31 @@ const ProductListItem = ({ product, showLinks, openModal }) => {
         product={product}
       />
       <a href="#">
-        <img src={imageUrl} alt={name} />
+        <img src={fullUrl} alt={name} />
         <div className={style['product-title']}>{name}</div>
       </a>
       <div>
         <a className={style['no-change-on-hover']} href="#">
-          <i className={avgRating > 4.7 ? style['stars-5']
-            : avgRating > 4.2 ? style['stars-4-5']
-            : avgRating > 3.7 ? style['stars-4']
-            : avgRating > 3.2 ? style['stars-3-5']
-            : avgRating > 2.7 ? style['stars-3']
-            : avgRating > 2.2 ? style['stars-2-5']
-            : avgRating > 1.7 ? style['stars-2']
-            : avgRating > 1.2 ? style['stars-1-5']
-            : avgRating > 0.7 ? style['stars-1']
-            : avgRating > 0.2 ? style['stars-0-5']
-            : style['stars-0']}
+          <i className={avgrating > 4.7 ? style['stars-5']
+            : avgrating > 4.2 ? style['stars-4-5']
+              : avgrating > 3.7 ? style['stars-4']
+                : avgrating > 3.2 ? style['stars-3-5']
+                  : avgrating > 2.7 ? style['stars-3']
+                    : avgrating > 2.2 ? style['stars-2-5']
+                      : avgrating > 1.7 ? style['stars-2']
+                        : avgrating > 1.2 ? style['stars-1-5']
+                          : avgrating > 0.7 ? style['stars-1']
+                            : avgrating > 0.2 ? style['stars-0-5']
+                              : style['stars-0']}
           />
-          <span className={style['total-reviews']}>{numReviews}</span>
+          <span className={style['total-reviews']}>{numreviews}</span>
         </a>
       </div>
       <div className="product-pricing">
         <a className={style['no-change-on-hover']} href="#">
-          <span className={style['price']}>{product.price}</span>
+          <span className={style.price}>{product.price}</span>
         </a>
-        <Prime isPrime={product.prime} />
+        <Prime isPrime={prime} />
       </div>
     </div>
   );

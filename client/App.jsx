@@ -9,8 +9,6 @@ import ProductList from './components/ProductList';
 import FeedbackToggle from './components/FeedbackToggle';
 import FeedbackModal from './components/FeedbackModal';
 
-
-// console.log('Webpack is watching for changes!');
 class App extends React.Component {
   constructor(props) {
     super(props);

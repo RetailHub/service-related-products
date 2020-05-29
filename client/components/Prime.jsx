@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import propTypes from 'prop-types';
 
@@ -14,10 +17,6 @@ const Prime = ({ isPrime }) => {
     );
   }
   return null;
-};
-
-Prime.propTypes = {
-  isPrime: propTypes.number.isRequired,
 };
 
 export default Prime;

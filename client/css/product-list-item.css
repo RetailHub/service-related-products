@@ -11,7 +11,7 @@
 }
 
 .sprites {
-  background-image: url('https://d1ivqy59bo7rzu.cloudfront.net/Amazon_ui-icon-sprite-sheet.png');
+  background-image: url('https://sdc-related-products.s3.us-east-2.amazonaws.com/logos/AmazonUIIcon-sprite_1x.png');
   background-size: 400px 900px;
   background-repeat: no-repeat;
   display: inline-block;

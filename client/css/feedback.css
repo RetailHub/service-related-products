@@ -10,13 +10,13 @@
   line-height: 11px;
   margin: 0 0 0 2px;
   display: inline-block;
-  background: url('https://d1ivqy59bo7rzu.cloudfront.net/Amazon_feedback-sprite.png') right 0 no-repeat;
+  background: url('https://sdc-related-products.s3.us-east-2.amazonaws.com/logos/AmazonUIIcon-sprite_1x.png') right 0 no-repeat;
   background-size: 15px;
 }
 
 .feedback-toggle a:hover {
   color: #E47911;
-  background: url('https://d1ivqy59bo7rzu.cloudfront.net/Amazon_feedback-sprite.png') right -13px no-repeat;
+  background: url('https://sdc-related-products.s3.us-east-2.amazonaws.com/logos/AmazonUIIcon-sprite_1x.png') right -13px no-repeat;
   background-size: 15px;
 }
 
@@ -145,7 +145,7 @@
   left: 18px;
   top: 11px;
   background-position: -318px -35px;
-  background-image: url('https://d1ivqy59bo7rzu.cloudfront.net/Amazon_ui-icon-sprite-sheet.png');
+  background-image: url('https://sdc-related-products.s3.us-east-2.amazonaws.com/logos/AmazonUIIcon-sprite_1x.png');
   -webkit-background-size: 400px 900px;
   background-size: 400px 900px;
   background-repeat: no-repeat;
