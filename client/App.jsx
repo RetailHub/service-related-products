@@ -12,6 +12,8 @@ import FeedbackToggle from './components/FeedbackToggle';
 import FeedbackModal from './components/FeedbackModal';
 
 const id = window.location.search.substring(2);
+const categorySet = ['electronics', 'home', 'music', 'sports', 'clothing', 'tools', 'outdoors', 'beauty', 'education', 'pets'];
+const sendCategory = categorySet[Math.random() * (id + 1)];
 
 class App extends React.Component {
   constructor(props) {

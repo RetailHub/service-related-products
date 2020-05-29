@@ -21,7 +21,13 @@ const db = pgp(connection);
 module.exports = {
   products: {
     getRelated(productId, callback) {
-      db.any('SELECT * FROM PRODUCTS LIMIT 50')
+      let num;
+      if (productId > 9999950) {
+        num = productId - 50;
+      } else {
+        num = productId;
+      }
+      db.any(`SELECT * FROM PRODUCTS WHERE productId >= ${num} LIMIT 50`)
         .then((data) => {
           callback(null, data);
         })
