@@ -36,7 +36,7 @@ module.exports = {
         });
     },
     addNew(params, callback) {
-      db.none('INSERT INTO products (productId, name, price, prime, imageUrl, reviews, rating, category) VALUES (${productId}, ${name}, ${price}, ${prime}, ${imageUrl}, ${numReviews}, ${avgRating}, ${category})', params)
+      db.none('INSERT INTO products (productId, name, price, prime, imageUrl, reviews, rating, category) VALUES (${productId}, ${name}, ${price}, ${prime}, ${imageUrl}, ${numReviews}, ${avgRating}, ${category}) ON CONFLICT (productId) DO UPDATE SET productId = ${productId}, name = ${name}, price = ${price}, prime = ${prime}, imageUrl = ${imageUrl}, reviews = ${numReviews}, rating = ${avgRating}, category = ${category}', params)
         .then((data) => {
           callback(null, data);
         })
