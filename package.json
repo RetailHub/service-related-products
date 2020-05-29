@@ -20,7 +20,7 @@
     "test-coverage": "jest --verbose --coverage --colors --detectOpenHandles",
     "test-watch": "jest --watch",
     "c2c": "cqlsh -k related -e \"COPY related.products (productid, name, price, prime, imageUrl, reviews, rating, category, subcategory) FROM 'server/database/data.csv' WITH DELIMITER = '|' AND HEADER = TRUE;\"",
-    "c2p": "node server/database/postgreSQL/CSV_to_postgres.js"
+    "c2p": "node server/database/PostgreSQL/CSV_to_postgres.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
