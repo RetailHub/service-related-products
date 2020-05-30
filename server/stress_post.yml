@@ -41,5 +41,5 @@ scenarios:
           numReviews: "{{ numReviews }}"
           avgRating: "{{ avgRating }}"
           category: "{{ category }}"
-    - log: "POST request with ID: {{productId}}"
+    # - log: "POST request with ID: {{productId}}"
 

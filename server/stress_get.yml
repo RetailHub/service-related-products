@@ -32,5 +32,5 @@ scenarios:
     - function: "generateId"
     - get:
         url: "/?={id}"
-    - log: "GET request with ID: {{id}}"
+    # - log: "GET request with ID: {{id}}"
 
