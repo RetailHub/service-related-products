@@ -14,7 +14,6 @@ const connection = {
   database: 'related',
   user: 'sajjanrajvaidya',
   password: config.entry,
-  keepAlive: true,
 };
 
 const db = pgp(connection);
