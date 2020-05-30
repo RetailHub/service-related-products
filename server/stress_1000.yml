@@ -1,6 +1,8 @@
 config:
   target: 'http://localhost:3003'
   processor: './stressor.js'
+  http:
+    - pool: 50
   ensure:
     maxErrorRate: 2
   phases:
@@ -17,8 +19,10 @@ scenarios:
     weight: 10
     flow:
       - function: "generateId"
-      - get:
-          url: "/?={id}"
+      - loop:
+        - get:
+            url: "/?={id}"
+        count: 10
       # - log: "GET request with ID: {{id}}"
   # - name: "POST new items"
   #   weight: 1
