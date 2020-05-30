@@ -1,6 +1,8 @@
 config:
   target: 'http://localhost:3003'
   processor: './stressor.js'
+  http:
+    pool: 50
   ensure:
     maxErrorRate: 2
   phases:
@@ -23,9 +25,6 @@ config:
       rampTo: 1000
       maxVusers: 1000
       name: "Sustained max load"
-  # defaults:
-  #   headers:
-  #     x-my-service-auth: '987401838271002188298567'
 scenarios:
   - name: "POST items"
     flow:
@@ -41,5 +40,6 @@ scenarios:
           numReviews: "{{ numReviews }}"
           avgRating: "{{ avgRating }}"
           category: "{{ category }}"
+      count: 10
     # - log: "POST request with ID: {{productId}}"
 
