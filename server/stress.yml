@@ -8,27 +8,27 @@ config:
       arrivalRate: 1
       maxVusers: 1
       name: "Warm up"
-      pause: 3
+    - pause: 3
     - duration: 20
       arrivalRate: 1
       rampTo: 10
       maxVusers: 10
       name: "x10"
-      pause: 3
+    - pause: 3
     - duration: 30
       arrivalRate: 10
       rampTo: 100
       maxVusers: 100
       name: "x100"
-      pause: 3
+    - pause: 3
     - duration: 60
       arrivalRate: 100
       rampTo: 1000
       maxVusers: 1000
       name: "Sustained max load"
-  defaults:
-    headers:
-      x-my-service-auth: '987401838271002188298567'
+  # defaults:
+    # headers:
+    #   x-my-service-auth: '987401838271002188298567'
 scenarios:
   - name: "GET related items"
     weight: 10
