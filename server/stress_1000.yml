@@ -1,0 +1,40 @@
+config:
+  target: 'http://localhost:3003'
+  processor: './stressor.js'
+  http:
+    - pool: 50
+  ensure:
+    maxErrorRate: 2
+  phases:
+    - duration: 60
+      arrivalRate: 100
+      rampTo: 1000
+      maxVusers: 1000
+      name: "Sustained max load"
+scenarios:
+  - name: "GET related items"
+    weight: 10
+    flow:
+      - function: "generateId"
+      - loop:
+        - get:
+            url: "/?={id}"
+        count: 10
+      # - log: "GET request with ID: {{id}}"
+  # - name: "POST new items"
+  #   weight: 1
+  #   flow:
+  #   - function: "generatePost"
+  #   - post:
+  #       url: "/api/addProduct/"
+  #       json:
+  #         productId: "{{ productId }}"
+  #         name: "{{ name }}"
+  #         price: "{{ price }}"
+  #         prime: "{{ prime }}"
+  #         imageUrl: "{{ imageUrl }}"
+  #         numReviews: "{{ numReviews }}"
+  #         avgRating: "{{ avgRating }}"
+  #         category: "{{ category }}"
+  #   # - log: "POST request with ID: {{productId}}"
+
