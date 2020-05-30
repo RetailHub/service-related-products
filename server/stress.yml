@@ -37,7 +37,7 @@ scenarios:
       - get:
           url: "/?={id}"
       # - log: "GET request with ID: {{id}}"
-  - name: "Post items"
+  - name: "POST new items"
     weight: 1
     flow:
     - function: "generatePost"

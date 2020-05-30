@@ -1,23 +1,40 @@
-const Promise = require('bluebird');
+// << USING POOL >>
+// const { Pool } = require('pg');
 
-const initOptions = {
-  promiseLib: Promise,
-};
+// const pool = new Pool({
+//   user: 'sajjanrajvaidya',
+//   password: 'hrr45-sdc',
+//   host: 'localhost',
+//   database: 'related',
+//   port: '5432',
+//   keepAlive: true,
+//   max: 30000,
+// });
 
-const pgp = require('pg-promise')(initOptions);
+// << USING PG-PROMISE >>
 
-const config = require('./psqlconfig.js');
+// const Promise = require('bluebird');
 
-const connection = {
-  host: 'localhost',
-  port: 5432,
-  database: 'related',
-  user: 'sajjanrajvaidya',
-  password: config.entry,
-  keepAlive: true,
-};
+// const initOptions = {
+//   promiseLib: Promise,
+// };
 
-const db = pgp(connection);
+// const pgp = require('pg-promise')(initOptions);
+
+// const config = require('./psqlconfig.js');
+
+// const connection = {
+//   host: 'localhost',
+//   port: 5432,
+//   database: 'related',
+//   user: 'sajjanrajvaidya',
+//   password: config.entry,
+//   keepAlive: true,
+//   max: 30000,
+// };
+
+// const db = pgp(connection);
+const db = require('./pg-connection.js');
 
 module.exports = {
   products: {
@@ -28,6 +45,17 @@ module.exports = {
       } else {
         num = productId;
       }
+
+      // << POOL QUERY SYNTAX >>
+      // pool.query('SELECT * FROM PRODUCTS WHERE productId = $1', [productId], (err, res) => {
+      //   if (err) {
+      //     console.log(err);
+      //   } else {
+      //     callback(err, res);
+      //   }
+      // });
+
+      // << PGP QUERY SYNTAX >>
       db.any(`SELECT * FROM PRODUCTS WHERE productId >= ${num} LIMIT 50`)
         .then((data) => {
           callback(null, data);
