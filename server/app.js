@@ -6,13 +6,20 @@ const path = require('path');
 
 const routes = require('./routes');
 
-const app = express();
+const app1 = express();
+const app2 = express();
 
-app.use(express.static(path.join(__dirname, '/../public')));
+app1
+  .use(express.static(path.join(__dirname, '/../public')))
+  .use(express.json())
+  .use(express.urlencoded({ extended: true }))
+  .use('/api', routes);
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app2
+  .use(express.static(path.join(__dirname, '/../public')))
+  .use(express.json())
+  .use(express.urlencoded({ extended: true }))
+  .use('/api', routes);
 
-app.use('/api', routes);
-
-module.exports = app;
+module.exports.app1 = app1;
+module.exports.app2 = app2;
