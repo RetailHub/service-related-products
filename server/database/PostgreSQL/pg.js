@@ -9,7 +9,7 @@ const pgp = require('pg-promise')(initOptions);
 const config = require('./psqlconfig.js');
 
 const connection = {
-  host: 'localhost',
+  host: '18.218.44.203',
   port: 5432,
   database: 'related',
   user: 'sajjanrajvaidya',

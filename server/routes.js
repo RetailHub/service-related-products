@@ -6,6 +6,7 @@ const router = express.Router();
 router.get('/related_products/:id', (req, res) => {
   pg.products.getRelated(req.params.id, (err, results) => {
     if (err) {
+	    console.log('Here is the error: ', err);
       res.status(500).send('Something went wrong!');
     } else {
       res.status(200).send(results);
