@@ -23,7 +23,7 @@
     "c2p": "node server/database/PostgreSQL/CSV_to_postgres.js"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-preset-airbnb": "^5.0.0",
     "bluebird": "^3.7.2",
     "cassandra-driver": "^4.5.2",
